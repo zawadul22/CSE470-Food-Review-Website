@@ -8,32 +8,35 @@ class UserTest extends TestCase
 {
     public function testLogin(){
         $data = [
-            'email' => 'aditya@gmail.com', 
+            'email' => 'zawadul@gmail.com', 
             'password' => '123456'
         ];
         $this->withoutMiddleware();
         $response = $this->post('/login', $data);
 
-        $response->assertRedirect('/review');
+        $response->assertRedirect('/');
     }
 
 
     public function testOwnerLogin(){
         $data = [
-            'email' => 'aditya@gmail.com', 
+            'email' => 'zawadul@gmail.com', 
             'password' => '123456'
         ];
         $this->withoutMiddleware();
         $response = $this->post('/ownerLogin', $data);
 
-        $response->assertRedirect('/myRestaurantReview');
+        $response->assertRedirect('/');
     }
+
 
     public function testOwnerLoginView(){
         $response = $this->get('/ownerLogin');
 
         $response->assertStatus(200);
     }
+
+
 
     public function testRegisterIndex(){
         $response = $this->get('/register');

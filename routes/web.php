@@ -27,7 +27,7 @@ Route::get('/ownerLogin', 'UserController@ownerLoginView')->name('ownerLoginView
 Route::post('/ownerLogin', 'UserController@ownerLogin')->name('ownerLogin');
 Route::get('/ownerRegister', 'UserController@ownerRegisterView')->name('ownerRegisterView');
 Route::post('/ownerRegister', 'UserController@ownerRegister')->name('ownerRegister');
-
+Route::get('/ownerSignout', 'UserController@ownerSignout')->name('ownerSignout');
 
 
 Route::get('/review', 'ReviewController@index')->name('review.index');
